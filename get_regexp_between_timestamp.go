@@ -14,12 +14,12 @@ func GetBetweenString(firstStr string, secondStr string, style... string) string
 	firstInt, _ := strconv.Atoi(firstStr)
 	secondInt, _ := strconv.Atoi(secondStr)
 	var newStr string
-	if len(style) != 0 {
+	if len(style) == 0 {
 		for i := firstInt; i <= secondInt; i++ {
 			newStr = newStr + strconv.Itoa(i)
 		}
 	} else {
-		newStr = firstStr + "-" + secondStr
+		newStr = firstStr + style[0] + secondStr
 	}
 
 	return "[" + newStr + "]"
